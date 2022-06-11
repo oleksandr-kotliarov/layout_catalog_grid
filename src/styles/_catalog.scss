@@ -1,9 +1,19 @@
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  justify-content: center;
+  @include grid-columns(1);
 
-  max-width: 944px;
-  margin: 0 auto;
+  @media (min-width: 488px) {
+    @include grid-columns(2);
+  }
+
+  @media (min-width: 768px) {
+    @include grid-columns(3);
+  }
+
+  @media (min-width: 1024px) {
+    @include grid-columns(4);
+  }
 
   &__card {
     display: flex;
